@@ -7,7 +7,7 @@ folder_shapefiles = "C:/learnPython/GIS-automation/data"
 # Setting workspace
 env.workspace = folder_shapefiles
 
-# shapefiles
+# Shapefiles
 shape_point = "Precip2008Readings"
 shape_polygon = "Nebraska"
 
