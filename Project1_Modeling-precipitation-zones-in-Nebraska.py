@@ -13,8 +13,8 @@ shape_polygon = "Nebraska"
 
 def precipitation_map_Nebraska(shape_point, shape_polygon):
     """
-    This function use four modules of Arcpy to create a vector file 
-    with different zones of precipitation in Nebraska
+    This function use four modules of library Arcpy by ESRI to create 
+    a vector file with different zones of precipitation in Nebraska
     """
     
     # Using the function Idw for determine the inverse distance weighted
