@@ -18,7 +18,7 @@ def precipitation_map_Nebraska(shape_point, shape_polygon):
     """
     
     # Using the function Idw for determine the inverse distance weighted
-    idw_map = Idw(name_shape_point, "RASTERVALU")
+    idw_map = Idw(shape_point, "RASTERVALU")
 
     # Using the function Reclassify for to do reclassification the map of inverse distance weighted
     reclass_map = Reclassify(idw_map, "Value", RemapRange([[0,30000,1],[30000,60000,2],
