@@ -1,6 +1,6 @@
 #------------CREATE A VECTOR FILE WITH DIFFERENT ZONES OF PRECIPITATION IN NEBRASKA -------------
 
-from arcpy import env, Clip_analysis, ListFeatureClasses, RasterToPolygon_conversion
+from arcpy import env, Clip_analysis, RasterToPolygon_conversion
 from arcpy.sa import Idw
 
 # The path to folder with shapefiles
