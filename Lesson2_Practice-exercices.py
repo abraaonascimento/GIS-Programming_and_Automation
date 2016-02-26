@@ -1,5 +1,5 @@
-#--------------------- Practice 1 - Find the spaces in a is of names -------------------------
-print "Practice 1 - Find the spaces in a is of names"
+#--------------------- Practice 1 - Find the spaces in a list of names -------------------------
+print "Practice 1 - Find the spaces in a list of names"
 print ""
 
 # List of names
