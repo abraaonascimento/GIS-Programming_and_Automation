@@ -5,7 +5,7 @@ print ""
 # List of names
 beatles = ["John Lennon", "Paul McCartney", "Ringo Starr", "George Harrison"]
 
-# Show in each name of list the mensagem "There is a space in ________'s name
+# Show in each name of list the mensagem "There is a space in _______'s name
 # at character ____." with name and value
 for name in beatles:
     print("There is a space in" + name + "'s name at character "+ str(name.index(" ")) + ".")
