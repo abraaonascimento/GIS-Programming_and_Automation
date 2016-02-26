@@ -5,7 +5,7 @@ print ""
 # List of names
 beatles = ["John Lennon", "Paul McCartney", "Ringo Starr", "George Harrison"]
 
-# Show in each name of list the mensagem "There is a space in _______'s name
+# Show in each name of list the message "There is a space in _______'s name
 # at character ____." with name and value
 for name in beatles:
     print("There is a space in" + name + "'s name at character "+ str(name.index(" ")) + ".")
@@ -98,6 +98,7 @@ try:
         AddMessage("Wrote clipped file " + outClipFeatureClass + ". ")
         print ("Wrote clipped file " + outClipFeatureClass + ". ")
 
+# If happen some error 
 except:
     # Show messages for error
     print GetMessages()
