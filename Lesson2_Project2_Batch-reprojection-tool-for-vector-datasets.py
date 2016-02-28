@@ -26,7 +26,7 @@ try:
         # the standard  spatial reference show message
         # about this and pass to next feature
         if sr.name == sr_st.name:
-            print "This file already have the Standard spacial reference"
+            print "This file already have the Standard spatial reference"
             pass
 
         else:
