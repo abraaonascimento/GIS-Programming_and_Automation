@@ -83,7 +83,7 @@ usa_workspace = "C:\\learnPython\\data\\USA.gdb"
 iowa_data = "C:\\learnPython\\data\\Iowa.gdb\\Iowa"
  
 # Get a list of all feature classes in the USA folder
-arcpy.env.workspace = usa_workspace
+env.workspace = usa_workspace
 featureClass = ListFeatureClasses()
 
 try: 
