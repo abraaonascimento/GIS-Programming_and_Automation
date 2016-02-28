@@ -6,7 +6,7 @@ standard_folder = "C:\\learnPython\\data\\lesson2_2"
 standard_file = "C:\\learnPython\\data\\lesson2_2\\StateRoutes.shp"
 
 # Get a list of all feature classes in the standard folder
-env.workspace = standar_folder
+env.workspace = standard_folder
 featureClass = ListFeatureClasses()
 
 
