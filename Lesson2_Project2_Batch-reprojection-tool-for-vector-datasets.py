@@ -1,12 +1,9 @@
-# THIRD TESTE
-
 from arcpy import env,  Describe, GetMessages, GetParameterAsText, ListFeatureClasses, Project_management, SpatialReference
 
-#input_folder = GetParameterAsText(0)
-#input_file = GetParameterAsText(1)
-
-input_folder = "C:\\learnPython\\data\\lesson2_2"
-input_file = "C:\\learnPython\\data\\lesson2_2\\StateRoutes.shp"
+#input_folder = "C:\\learnPython\\data\\lesson2_2"
+#input_file = "C:\\learnPython\\data\\lesson2_2\\StateRoutes.shp"
+input_folder = GetParameterAsText(0)
+input_file = GetParameterAsText(1)
 
 # Get a list of all feature classes in the standard folder
 env.workspace = input_folder
