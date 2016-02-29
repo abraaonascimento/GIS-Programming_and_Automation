@@ -28,10 +28,10 @@ sr_standard_file = desc_standard_file.SpatialReference
 l = []
 try: 
 
-    #Loop through all feature classes in standar folder
+    # Loop through all feature classes in standard folder
     for feature in featureClass:
 
-        # Describe the spatial reference of feature
+        # Describe the feature spatial reference
         desc = Describe(feature)
         sr = desc.SpatialReference
 
@@ -56,15 +56,17 @@ try:
             feature_name = feature[:-4]
             out_name = "\\" + feature_name + "_projected"
 
-            # reproject file
+            # Reproject file
             Project_management(feature, input_folder + out_name, coor_system)
-
             print ("Projected: " + str(feature))
+            
 # If happen some error 
 except:
     # Show messages for error
     print GetMessages()
 
 print "Completed script Project2"
+
+# End script
 end_time = time.time()
 print ("End Time: " + strftime("%a, %d %b %Y %H:%M:%S 2016", gmtime()) + ", Elaped Time: " + str(end_time - start_time)[:-5] + " seconds")
