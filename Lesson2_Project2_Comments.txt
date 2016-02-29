@@ -1,0 +1,10 @@
+I'm very happy for have successful in this exercise. Until here I learned some 
+cool things to improve my skills in GIS Programming. How for example use the help 
+by ESRI for understand each parameters of function.
+
+To do the project 2 I searched about two helps: Project and Spatial Reference
+besides go back to lesson 1.7.1 for remember how making a script tool and review 
+the logic to past lessons to I get it.
+
+Once that I get it the logic to do my tools works, my major challenge was 
+understand how the function Spatial Reference works. It was a little hard but I go it!
