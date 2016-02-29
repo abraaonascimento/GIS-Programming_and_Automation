@@ -1,12 +1,12 @@
-# SECOND TESTE
+# THIRD TESTE
 
-from arcpy import env,  Describe, GetParameterAsText, ListFeatureClasses, Project_management, SpatialReference
+from arcpy import env,  Describe, GetMessages, GetParameterAsText, ListFeatureClasses, Project_management, SpatialReference
 
-input_folder = GetParameterAsText(0)
-input_file = GetParameterAsText(1)
+#input_folder = GetParameterAsText(0)
+#input_file = GetParameterAsText(1)
 
-#standard_folder = "C:\\learnPython\\data\\lesson2_2"
-#standard_file = "C:\\learnPython\\data\\lesson2_2\\StateRoutes.shp"
+input_folder = "C:\\learnPython\\data\\lesson2_2"
+input_file = "C:\\learnPython\\data\\lesson2_2\\StateRoutes.shp"
 
 # Get a list of all feature classes in the standard folder
 env.workspace = input_folder
@@ -14,10 +14,11 @@ featureClass = ListFeatureClasses()
 
 # Get spatial reference of standard file
 desc_standard_file = Describe(input_file)
-sr_standard_file = desc.SpatialReference
+sr_standard_file = desc_standard_file.SpatialReference
 
 try: 
-# Loop through all feature classes in standar folder
+
+    #Loop through all feature classes in standar folder
     for feature in featureClass:
 
         # Describe the spatial reference of feature
@@ -36,12 +37,17 @@ try:
         # reproject file
         else:
 
-            # output name
+            # Get spatial reference
+            coor_system = str(sr_standard_file.name)
+            coor_system =  coor_system.replace("_", " ") + " (US Feet)"
+            coor_system = SpatialReference(coor_system)
+        
+            # Output name
             feature_name = feature[:-4]
             out_name = "\\" + feature_name + "_projected"
 
             # reproject file
-            Project_management(feature, input_folder + out_name, sr_standard_file.name)
+            Project_management(feature, input_folder + out_name, coor_system)
 
 # If happen some error 
 except:
