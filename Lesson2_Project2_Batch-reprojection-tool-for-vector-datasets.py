@@ -10,8 +10,8 @@ start_time = time.time()
 input_folder = GetParameterAsText(0)
 input_file = GetParameterAsText(1)
 
-# input_folder = "C:\\learnPython\\data\\lesson2_2"
-# input_file = "C:\\learnPython\\data\\lesson2_2\\StateRoutes.shp"
+# input_folder = "C:\\learnPython\\data\\lesson2"
+# input_file = "C:\\learnPython\\data\\lesson2\\StateRoutes.shp"
 
 print("Executing: Project2 tool " + str(input_folder) + " " + str(input_file))
 print ("Start Time: " + strftime("%a, %d %b %Y %H:%M:%S 2016", gmtime()))
