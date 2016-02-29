@@ -3,7 +3,7 @@ from time import gmtime, strftime
 
 from arcpy import env,  Describe, GetMessages, GetParameterAsText, ListFeatureClasses, Project_management, SpatialReference
 
-# Start scrpit
+# Start script
 start_time = time.time()
 
 # Get the parameters of project2 tool
