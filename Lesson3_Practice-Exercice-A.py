@@ -2,7 +2,7 @@
 # ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE-----------------------------------
 
 def percentage(totalValue, percentageValue):
-    """ The function recives two values. It's used to
+    """The function recives two values. It's used to
     calculate percentage value"""
 
     print "The percentage value is: " (percentageValue  * 100) / totalValue
