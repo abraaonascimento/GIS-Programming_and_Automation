@@ -1,5 +1,5 @@
 #
-# ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE-----------------------------------
+# ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE------------------------------------
 
 def percentage(totalValue, percentageValue):
     """The function recives two values. It's used to
@@ -8,8 +8,8 @@ def percentage(totalValue, percentageValue):
     print "The percentage value is: " (percentageValue  * 100) / totalValue
 
 #---------- SELECT FEATURES BY LOCATION AND UPDATE A FIELD FOR THE SELECTED FEATURES -------------------
-from arcpy import env, ListFeatureClasses, MakeFeatureLayer_management, SelectLayerByLocation_management
-import arcpy
+from arcpy import env, GetCount_management, MakeFeatureLayer_management, SelectLayerByLocation_management
+from arcpy.da import UpdateCursor
 
 # Setting workspace
 env.workspace = "C:\\learnPython\\data\\Lesson3PracticeExerciseA\\Washington.gdb"
@@ -61,7 +61,7 @@ totalCity = int(city.getOutput(0))
 citySelected = arcpy.GetCount_management("CityBoundaries_lyr")
 totalCitySelected = int(citySelected.getOutput(0))
 
-# ---------------------------------SHOW PERCENTAGE VALUE---------------------------------------
+# ---------------------------------SHOW PERCENTAGE VALUE----------------------------------------
 
 # Show the percentage value
 percentage(totalCity, totalCitySelected)
