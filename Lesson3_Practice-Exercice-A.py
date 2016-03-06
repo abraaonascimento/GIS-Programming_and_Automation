@@ -41,7 +41,6 @@ try:
 
     # Select the field HasParkAndRide of CityBoundaries layer 
     with UpdateCursor("CityBoundaries_lyr", (nameField,)) as cursor:
-    #with arcpy.da.UpdateCursor("CityBoundaries_lyr", (nameField,)) as cursor:
 
         # For each row in field
         for row in cursor:
