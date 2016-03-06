@@ -1,51 +1,5 @@
-# Version1
-#-------------------------------------
-from arcpy import env, ListFeatureClasses, MakeFeatureLayer_management, SelectLayerByLocation_management
-import arcpy
-
 #
-env.workspace = "C:\\learnPython\\data\\Lesson3PracticeExerciseA\\Washington.gdb"
-
-#
-cities = "CityBoundaries"
-nameField = "HasParkAndRide"
-
-#
-parkAndRide = "ParkAndRide"
-
-
-try:
-
-    #
-    MakeFeatureLayer_management(cities,"CityBoundaries_lyr")
-    MakeFeatureLayer_management(parkAndRide,"ParkAndRide_lry")
-
-
-    # Select only the cities that contain point of park or ride
-    SelectLayerByLocation_management("CityBoundaries_lyr", "CONTAINS", "ParkAndRide_lry")
-
-except:
-    print 'error'
-
-#
-try:
-    
-    with arcpy.da.UpdateCursor("CityBoundaries_lyr", (nameField,)) as cursor:
-
-        #
-        for row in cursor:
-
-            # 
-            row[0] = "True"
-except:
-#    print "error!"
-
-#
-city = arcpy.GetCount_management("CityBoundaries")
-totalCity = int(city.getOutput(0))
-
-citySelected = arcpy.GetCount_management("CityBoundaries_lyr")
-totalCitySelected = int(citySelected.getOutput(0))
+# ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE-----------------------------------
 
 def percentage(totalValue, percentageValue):
     """ The function recives two values. It's used to
@@ -53,11 +7,61 @@ def percentage(totalValue, percentageValue):
 
     print "The percentage value is: " (percentageValue  * 100) / totalValue
 
+#---------- SELECT FEATURES BY LOCATION AND UPDATE A FIELD FOR THE SELECTED FEATURES -------------------
+from arcpy import env, ListFeatureClasses, MakeFeatureLayer_management, SelectLayerByLocation_management
+import arcpy
 
-def main():
+# Setting workspace
+env.workspace = "C:\\learnPython\\data\\Lesson3PracticeExerciseA\\Washington.gdb"
 
-    # 
-    percentage(totalCity, totalCitySelected)
+# Name and field of city geography data
+cities = "CityBoundaries"
+nameField = "HasParkAndRide"
 
-if __name__ == "__main__":
-    main()
+# Name of park/ride geography data
+parkAndRide = "ParkAndRide"
+
+# Try make layers
+try:
+    # Make a city layer and park/ride layer
+    MakeFeatureLayer_management(cities,"CityBoundaries_lyr")
+    MakeFeatureLayer_management(parkAndRide,"ParkAndRide_lry")
+
+    # Select only the cities that contain point of park and ride
+    SelectLayerByLocation_management("CityBoundaries_lyr", "CONTAINS", "ParkAndRide_lry")
+
+# If happen some error
+except:
+
+    # Show the massage
+    print 'It not possible to make a layer'
+
+# Try update field
+try:
+
+    # Select the field HasParkAndRide of CityBoundaries layer 
+    with arcpy.da.UpdateCursor("CityBoundaries_lyr", (nameField,)) as cursor:
+
+        # For each row in field
+        for row in cursor:
+
+            # Update row to 'True'
+            row[0] = "True"
+
+# If happen some error            
+except:
+    # Show the massage
+    print "It not possible update a field: ", nameField, "for the selected features"
+
+# Get the total value of cities in CityBoundaries 
+city = arcpy.GetCount_management("CityBoundaries")
+totalCity = int(city.getOutput(0))
+
+# Get the total value of cities seleted in CityBoundaries layer
+citySelected = arcpy.GetCount_management("CityBoundaries_lyr")
+totalCitySelected = int(citySelected.getOutput(0))
+
+# ---------------------------------SHOW PERCENTAGE VALUE---------------------------------------
+
+# Show the percentage value
+percentage(totalCity, totalCitySelected)
