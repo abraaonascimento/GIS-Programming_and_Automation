@@ -1,11 +1,11 @@
 #
-# ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE------------------------------------
+# ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE-----------------------------------
 
 def percentage(totalValue, percentageValue):
-    """The function recives two values. It's used to
+    """ The function recives two values. It's used to
     calculate percentage value"""
 
-    print "The percentage value is: " (percentageValue  * 100) / totalValue
+    print "The percentage value is: " + str((percentageValue  * 100) / totalValue)
 
 #---------- SELECT FEATURES BY LOCATION AND UPDATE A FIELD FOR THE SELECTED FEATURES -------------------
 from arcpy import env, GetCount_management, MakeFeatureLayer_management, SelectLayerByLocation_management
@@ -33,14 +33,15 @@ try:
 # If happen some error
 except:
 
-    # Show the massage
+    # show the massage
     print 'It not possible to make a layer'
 
 # Try update field
 try:
 
     # Select the field HasParkAndRide of CityBoundaries layer 
-    with arcpy.da.UpdateCursor("CityBoundaries_lyr", (nameField,)) as cursor:
+    with UpdateCursor("CityBoundaries_lyr", (nameField,)) as cursor:
+    #with arcpy.da.UpdateCursor("CityBoundaries_lyr", (nameField,)) as cursor:
 
         # For each row in field
         for row in cursor:
@@ -54,14 +55,14 @@ except:
     print "It not possible update a field: ", nameField, "for the selected features"
 
 # Get the total value of cities in CityBoundaries 
-city = arcpy.GetCount_management("CityBoundaries")
+city = GetCount_management("CityBoundaries")
 totalCity = int(city.getOutput(0))
 
 # Get the total value of cities seleted in CityBoundaries layer
-citySelected = arcpy.GetCount_management("CityBoundaries_lyr")
+citySelected = GetCount_management("CityBoundaries_lyr")
 totalCitySelected = int(citySelected.getOutput(0))
 
-# ---------------------------------SHOW PERCENTAGE VALUE----------------------------------------
+# ---------------------------------SHOW PERCENTAGE VALUE---------------------------------------
 
 # Show the percentage value
 percentage(totalCity, totalCitySelected)
