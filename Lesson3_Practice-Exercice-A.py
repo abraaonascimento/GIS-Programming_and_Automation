@@ -33,7 +33,7 @@ try:
 # If happen some error
 except:
 
-    # show the massage
+    # Show the massage
     print 'It not possible to make a layer'
 
 # Try update field
