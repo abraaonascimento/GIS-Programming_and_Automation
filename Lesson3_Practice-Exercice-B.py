@@ -1,4 +1,4 @@
-#
+# FIRST TESTE
 # ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE-----------------------------------
 
 def percentage(totalValue, percentageValue):
