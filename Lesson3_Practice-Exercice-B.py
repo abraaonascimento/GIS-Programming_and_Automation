@@ -7,50 +7,38 @@ def percentage(totalValue, percentageValue):
 
     print "The percentage value is: " + str((percentageValue  * 100) / totalValue)
 
-#-------------------------
-from arcpy import env, GetCount_management, MakeFeatureLayer_management, SelectLayerByLocation_management
+#----------------------------------------------
+from arcpy import env, Delete_management, GetCount_management, MakeFeatureLayer_management, SelectLayerByLocation_management
 from arcpy.da import UpdateCursor
 
 # Setting workspace
-env.workspace = "C:\\learnPython\\data\\Lesson3PracticeExerciseA\\Washington.gdb"
+env.workspace = "C:\\learnPython\\data\\Lesson3PracticeExerciseB\\Washington.gdb"
 
 # Name and field of city geography data
-cities = "CityBoundaries"
+cityBoundaries = "CityBoundaries"
 nameField = "NAME"
 parkAndRideField = "HasTwoParkAndRides"   # Name of column for storing the Park & Ride information
-cityIDStringField = "CI_FIPS"
 
 # Name of park/ride geography data
 parkAndRide = "ParkAndRide"
 
-#arcpy.MakeFeatureLayer_management(parkAndRide, "ParkAndRideLayer")
-#with arcpy.da.UpdateCursor(cityBoundaries, (cityIDStringField, parkAndRideField)) as cityRows:
-    #for city in cityRows:
+with UpdateCursor(cityBoundaries, (nameField, parkAndRideField)) as cityRows:
+    for city in cityRows:
+
+        name = city[0]
         # Create a query string for the current city    
         #cityIDString = city[0]
-        #queryString = '"' + cityIDStringField + '" = ' + "'" + cityIDString + "'"
+        queryString = '"' + nameField + '" = ' + "'" + name + "'"
         # Make a feature layer of just the current city polygon    
-        #arcpy.MakeFeatureLayer_management(cityBoundaries, "CurrentCityLayer", queryString)
-        
-with UpdateCursor(cities, (nameField,)) as cursor: #selecionar o nome
+        MakeFeatureLayer_management(cityBoundaries, "CurrentCityLayer", queryString)
 
-        for city in cursor:
+        # Get the total value of cities in CityBoundaries 
+        city = GetCount_management("CurrentCityLayer")
+        totalCity = int(city.getOutput(0))
 
-            queryString = '"' + cityIDStringField + '" = ' + "'" + cityIDString + "'"
+        print queryString
+        print totalCity
 
-            MakeFeatureLayer_management(parkAndRide, "ParkAndRide_lry")
-            MakeFeatureLayer_management(city, "city_lry")
+        Delete_management("CurrentCityLayer")
 
-            SelectLayerByLocation_management("city_lry", "CONTAINED_BY", "ParkAndRide_lry")
-
-            countPark = GetCount_management("ParkAndRide_lry")
-            totalPark = int(city.getOutput(0))
-
-            if totalPark > 1:
-                
-                # Update row to 'True'
-                row[0] = "True"
-
-                
-            else:
-                pass
+        break
