@@ -1,15 +1,12 @@
 #
-# ----------------------- FUNCTION TO CALCULATE THE PERCENTAGE VALUE--------------------------------------------------------
-
+# ---------------------------------FUNCTION TO CALCULATE THE PERCENTAGE VALUE-------------------------------------------------
 def percentage(totalValue, percentageValue):
     """Function that receives two values. It's used to
     calculate percentage value"""
 
     print "The percentage value is: " + str((percentageValue  * 100) / totalValue)
 
-#------------FIND WHICH CITIES HAVE AT LEAST TWO PARK AND RIDES WITHIN THEIR BOUNDARIES-------------------------------------
-
-     #find which cities have at least two park and rides within their boundaries
+#---------------------FIND WHICH CITIES HAVE AT LEAST TWO PARK AND RIDES WITHIN THEIR BOUNDARIES-------------------------------
 from arcpy import env, Delete_management, GetCount_management, MakeFeatureLayer_management, SelectLayerByLocation_management
 from arcpy.da import UpdateCursor
 
@@ -33,6 +30,7 @@ totalCity = 0
 # Try find which cities have at least two park and rides within their boundaries
 try:
     
+    #
     with UpdateCursor(cityBoundaries, (nameField, parkAndRideField)) as cityRows:
 
         # For each feature of city in cityBoundaries geography data
@@ -80,7 +78,7 @@ try:
 # If happen some error
 except:
 
-    # Show the massage
+    # Show the message
     print "It was not possible find which cities have at least two park and rides within their boundaries"
         
 # ---------------------------------SHOW PERCENTAGE VALUE---------------------------------------
