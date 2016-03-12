@@ -1,5 +1,4 @@
-#-----MAKES A SEPARATE SHAPEFILE FOR EACH OF THESE TYPES OF AMENITIES (SCHOOLS, HOSPITALS,
-# PLACES OF WORSHIP) WITHIN THE BOUNDARY OF EL SALVADOR ----------------------------------
+# MAKES A SEPARATE SHAPEFILE FOR EACH OF THESE TYPES OF AMENITIES (SCHOOLS, HOSPITALS, PLACES OF WORSHIP) WITHIN THE BOUNDARY OF EL SALVADOR ----------------------------------
 from arcpy import env, AddField_management, CopyFeatures_management,  MakeFeatureLayer_management, UpdateCursor
 from arcpy.da import UpdateCursor
 
