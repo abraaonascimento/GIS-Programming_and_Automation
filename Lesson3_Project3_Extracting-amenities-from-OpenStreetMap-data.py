@@ -1,8 +1,7 @@
-# TESTE 2
-
 #-----MAKES A SEPARATE SHAPEFILE FOR EACH OF THESE TYPES OF AMENITIES (SCHOOLS, HOSPITALS,
 # PLACES OF WORSHIP) WITHIN THE BOUNDARY OF EL SALVADOR ----------------------------------
 from arcpy import env, AddField_management, CopyFeatures_management,  MakeFeatureLayer_management, UpdateCursor
+from arcpy.da import UpdateCursor
 
 # Setting the workspace
 env.workspace = "C:\\learnPython\\data\\Project3"
@@ -36,28 +35,26 @@ try:
         # Makes a separate shapefile for each types of amenities 
         CopyFeatures_management(nameAmenitiesLayer, typeAmenities)
 
+        # get the new separete shapefile
+        amenitiesTable = typeAmenities + '.dbf'
+
+        #
+        newField = "source"
+
+        # Add new field called 'source'
+        AddField_management(amenitiesTable, newField, "TEXT", 100)
+
+        #
+        with UpdateCursor(typeAmenities + ".shp", newField) as amenitiesRows:
+
+            for row in amenitiesRows:
+
+                row[0] = "OpenStreetMap"
+
+                amenitiesRows.updateRow(row)
+
 # If Happen some error
 except:
 
     # Show the message
     print 'It was not possible makes a separete shapefile for amenities'
-
-
-# For each type amenities in amenities list
-for typeAmenities in amenities:
-
-    # get the new separete shapefile
-    amenitiesTable = typeAmenities + '.dbf'
-
-    #
-    newField = "source"
-
-    # Add new field called 'source'
-    AddField_management(amenitiesTable, newField, "TEXT", 100)
-
-    #
-    with UpdateCursor(typeAmenities, (newField)) as amenitiesRows:
-
-        for row in amenitiesRows:
-
-            row[0] = "OpenStreetMap"
