@@ -18,9 +18,9 @@ amenities = ["school","hospital","place_of_worship"]
 country = "El Salvador"
 
 try:
-    #
-    queryStringCountry = '"' + nameFieldCountry + '" = ' + "'"  + country + "'"
+    # Select only the country in centralAmericaBoundaries
     nameCountryLayer = country + "lyr"
+    queryStringCountry = '"' + nameFieldCountry + '" = ' + "'"  + country + "'"
     MakeFeatureLayer_management(centralAmericaBoundaries, nameCountryLayer, queryStringCountry)
 
     for typeAmenities in amenities:
@@ -42,8 +42,8 @@ try:
 
         # Get the new separete shapefile
         amenitiesTable = typeAmenities + '.dbf'
-        
-        #
+
+        # Name of new field for amenities 
         newField = "source"
 
         # Add new field called 'source'
@@ -53,8 +53,8 @@ try:
 
             for row in amenitiesRows:
 
+                # Update the value for each row in typeAmenities
                 row[0] = "OpenStreetMap"
-
                 amenitiesRows.updateRow(row)
 except:
     print 'It was not possible makes a separete shapefile for amenities'
