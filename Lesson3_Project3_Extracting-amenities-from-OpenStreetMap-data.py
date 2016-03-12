@@ -17,9 +17,7 @@ country = "El Salvador"
 # The name field of geographic data of points by Open Street Map
 nameFieldAmenity = "Amenity"
 
-# Try makes a separate shapefile for each types of amenities 
 try:
-    
     # For each type amenities in amenities list
     for typeAmenities in amenities:
 
@@ -38,13 +36,12 @@ try:
         # get the new separete shapefile
         amenitiesTable = typeAmenities + '.dbf'
 
-        #
-        newField = "source"
-
         # Add new field called 'source'
         AddField_management(amenitiesTable, newField, "TEXT", 100)
 
         #
+        newField = "source"
+        
         with UpdateCursor(typeAmenities + ".shp", newField) as amenitiesRows:
 
             for row in amenitiesRows:
@@ -52,9 +49,5 @@ try:
                 row[0] = "OpenStreetMap"
 
                 amenitiesRows.updateRow(row)
-
-# If Happen some error
 except:
-
-    # Show the message
     print 'It was not possible makes a separete shapefile for amenities'
