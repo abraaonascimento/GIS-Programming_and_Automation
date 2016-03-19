@@ -1,5 +1,4 @@
-#==================TESTES============================================================== 
-
+#---------------CREATE A DOMOGRAPHIC MAPS------------------
 import csv, operator
  
 # Taks 1 - make a randow point shapefile
@@ -62,8 +61,39 @@ with UpdateCursor(geographicDataOrder + ".shp", newField) as geographicRows:
         geographicRows.updateRow(row)
 """
 
+# Task 5 - Update de value of each row of csv in geographic data
+import csv, operator
+
+from arcpy import env, AddField_management, Sort_management
+from arcpy.da import UpdateCursor
 
 
+env.workspace = "C:\\demographicMaps\\setores"
+geographicDataOrder = "sampaOrder"
+newField = "brancos"
+
+demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")
+demographicCsv = csv.reader(demographicData, delimiter=";")
+demographicSorted = sorted(demographicCsv, key=operator.itemgetter(0))
+
+# Put the code census field
+with UpdateCursor(geographicDataOrder + ".shp", (newField, #code census field)) as geographicRows:    
+
+    for geographicRow in geographicRows:
+
+        for demographicRow in demographicSorted:
+
+            print geographicRow[0]
+            break
+
+            if geographicRow[0] == str(demographicRow[0]): #
+
+            # Update the value for each row in typeAmenities
+                row[0] = demographicRow[3]
+                geographicRows.updateRow(row)
+            else:
+                pass
+        break
 
 """
 geographicData = "sampa"
