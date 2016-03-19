@@ -1,4 +1,4 @@
-#---------------CREATE A DOMOGRAPHIC MAPS------------------
+#-----------------------------------------------------------------------
 import csv, operator
  
 # Taks 1 - make a randow point shapefile
@@ -95,7 +95,7 @@ with UpdateCursor(geographicDataOrder + ".shp", (whiteField, idField)) as geogra
             # da erro por causa do indice que ficou como ultimo registro, acho que um next no demographicCsv  já funciona
             if str(geographicRow[1]) == str(demographicRow[0]):
                 print geographicRow[1]
-                idDemographicRow = str(demographicRow[0])
+                idDemographicRow = str(demographicRow[3]) # 3 == v002
                 geographicRow[0] = idDemographicRow
                     
                 count += 1
