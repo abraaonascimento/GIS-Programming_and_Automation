@@ -14,11 +14,13 @@ arcpy.CreateRandomPoints_management(out, "randowPeople", shp, "", "point")
 #env.workspace = "C:\\demographicMaps\\setores"
 
 # Task 2 - order CSV
+
+"""
 demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")
 demographicCsv = csv.reader(demographicData, delimiter=";")
 
 sortedlist = sorted(demographicCsv, key=operator.itemgetter(0))
-
+"""
 
 # Task 3 - show the first row for each field that you'll use
 
@@ -70,30 +72,37 @@ from arcpy.da import UpdateCursor
 
 env.workspace = "C:\\demographicMaps\\setores"
 geographicDataOrder = "sampaOrder"
-newField = "brancos"
+whiteField = "brancos"
+idField = "CD_GEOCODI"
 
 demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")
 demographicCsv = csv.reader(demographicData, delimiter=";")
+demographicCsv.next()
 demographicSorted = sorted(demographicCsv, key=operator.itemgetter(0))
-
+count = 0
 # Put the code census field
-with UpdateCursor(geographicDataOrder + ".shp", (newField, #code census field)) as geographicRows:    
+with UpdateCursor(geographicDataOrder + ".shp", (whiteField, idField)) as geographicRows:    
 
     for geographicRow in geographicRows:
 
         for demographicRow in demographicSorted:
 
-            print geographicRow[0]
-            break
-
-            if geographicRow[0] == str(demographicRow[0]): #
+            #print geographicRow[0]
+            #print geographicRow[1]
+            #print demographicRow[0]
+            #break
+            #break
+            # da erro por causa do indice que ficou como ultimo registro, acho que um next no demographicCsv  já funciona
+            if str(geographicRow[1]) == str(demographicRow[0]):
+                print geographicRow[1]
+                idDemographicRow = str(demographicRow[0])
+                geographicRow[0] = idDemographicRow
+                    
+                count += 1
 
             # Update the value for each row in typeAmenities
-                row[0] = demographicRow[3]
-                geographicRows.updateRow(row)
-            else:
-                pass
-        break
+                #row[0] = demographicRow[3]
+                geographicRows.updateRow(geographicRow)
 
 """
 geographicData = "sampa"
