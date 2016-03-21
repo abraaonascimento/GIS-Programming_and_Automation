@@ -103,7 +103,9 @@ with UpdateCursor(geographicDataOrder + ".shp", (whiteField, idField)) as geogra
             # Update the value for each row in typeAmenities
                 #row[0] = demographicRow[3]
                 geographicRows.updateRow(geographicRow)
-
+                
+                # SAIR DO LOOP QUANDO O VALOR DO geographicRow[1]) == str(demographicRow
+                # VAI ECONOMIZAR TEMPO!!!
 """
 geographicData = "sampa"
 geographicDataOrder = "sampaOrder2"
