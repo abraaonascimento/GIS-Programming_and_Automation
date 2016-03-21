@@ -1,4 +1,4 @@
-#-----------------------------------------------------------------------
+#------------------------------------------------------------------------------------------
 import csv, operator
  
 # Taks 1 - make a randow point shapefile
@@ -64,11 +64,11 @@ with UpdateCursor(geographicDataOrder + ".shp", newField) as geographicRows:
 """
 
 # Task 5 - Update de value of each row of csv in geographic data
+"""
 import csv, operator
 
 from arcpy import env, AddField_management, Sort_management
 from arcpy.da import UpdateCursor
-
 
 env.workspace = "C:\\demographicMaps\\setores"
 geographicDataOrder = "sampaOrder"
@@ -103,10 +103,65 @@ with UpdateCursor(geographicDataOrder + ".shp", (whiteField, idField)) as geogra
             # Update the value for each row in typeAmenities
                 #row[0] = demographicRow[3]
                 geographicRows.updateRow(geographicRow)
-                
+
                 # SAIR DO LOOP QUANDO O VALOR DO geographicRow[1]) == str(demographicRow
                 # VAI ECONOMIZAR TEMPO!!!
                 break # isso melhora 50% do desempenho
+
+                # CONTINUAR DE ONDE PAROU, AI MERMÃO VAI FICAR COM MELHOR DESEMPENHO EVER, VAI SER 1 PRA 1!
+
+"""
+# Taks 6 - Create all colum to racil map. You need this: # white, # black, # yellow, # parda, # indigenous
+# and update de correct values for each colum ethnicity
+
+import csv, operator
+
+from arcpy import env, AddField_management, Sort_management
+from arcpy.da import UpdateCursor
+
+demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")
+demographicCsv = csv.reader(demographicData, delimiter=";")
+demographicCsv.next()
+demographicSorted = sorted(demographicCsv, key=operator.itemgetter(0))
+
+env.workspace = "C:\\demographicMaps\\setores"
+
+geographicData = "sampa"
+geographicDataOrder = "sampaOrder"
+geographicDataTable = "sampaOrder.dbf"
+
+Sort_management("C:\\demographicMaps\\setores\\sampa.shp", geographicDataOrder, [["ID", "ASCENDING"]])
+
+idField = "CD_GEOCODI"
+newFields = ["white", "black", "yellow", "parda", "indigenous"]
+valueEt = 2
+count = 0
+
+for field in newFields:
+
+    AddField_management(geographicDataTable, field, "TEXT", 100)
+    valueEt += 1
+    count += 1
+    if count == 3:
+        break
+
+    with UpdateCursor(geographicDataOrder + ".shp", (idField, field)) as geographicRows:
+
+        for geographicRow in geographicRows:
+
+            for demographicRow in demographicSorted:
+
+                if str(geographicRow[0]) == str(demographicRow[0]):
+
+                    print geographicRow[0]
+                    valueDemographicRow = str(demographicRow[valueEt]) # 3 == v002
+                    geographicRow[1] = valueDemographicRow
+                    
+                    geographicRows.updateRow(geographicRow)
+
+                    break # isso melhora 50% do desempenho
+            
+
 """
 geographicData = "sampa"
 geographicDataOrder = "sampaOrder2"
