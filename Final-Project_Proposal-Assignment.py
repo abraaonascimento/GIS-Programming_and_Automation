@@ -135,15 +135,15 @@ Sort_management("C:\\demographicMaps\\setores\\sampa.shp", geographicDataOrder, 
 idField = "CD_GEOCODI"
 newFields = ["white", "black", "yellow", "parda", "indigenous"]
 valueEt = 2
-count = 0
+#count = 0
 
 for field in newFields:
 
     AddField_management(geographicDataTable, field, "TEXT", 100)
     valueEt += 1
     count += 1
-    if count == 3:
-        break
+    #if count == 3:
+    #    break
 
     with UpdateCursor(geographicDataOrder + ".shp", (idField, field)) as geographicRows:
 
