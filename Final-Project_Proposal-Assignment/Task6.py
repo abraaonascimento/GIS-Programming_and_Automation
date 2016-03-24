@@ -42,7 +42,7 @@ for field in newFields:
                 else:
 
                     print geographicRow[0]
-                    valueDemographicRow = str(demographicRow[valueEt]) # 3 == v002
+                    valueDemographicRow = str(demographicRow[valueEt])
                     geographicRow[1] = valueDemographicRow
                     
                     geographicRows.updateRow(geographicRow)
