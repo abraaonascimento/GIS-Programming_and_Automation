@@ -1,7 +1,7 @@
 #---------------TASK 4 - UPDATE THE VALUE OF GEOGRAPHIC DATA WITH EACH VALUE OF CSV------------- 
 import csv, operator
 
-from arcpy import env, AddField_management
+from arcpy import env
 from arcpy.da import UpdateCursor
 
 # Setting the workspace
