@@ -1,7 +1,5 @@
 # Taks 6 - Create all colum to racil map. You need this: # white, # black, # yellow, # parda, # indigenous
 # and update de correct values for each colum ethnicity
-
-"""
 import csv, operator
 
 from arcpy import env, AddField_management, Sort_management
@@ -23,16 +21,12 @@ Sort_management("C:\\demographicMaps\\setores\\sampa.shp", geographicDataOrder, 
 idField = "CD_GEOCODI"
 newFields = ["white", "black", "yellow", "parda", "indigenous"]
 valueEt = 2
-#count = 0
 
 for field in newFields:
 
     AddField_management(geographicDataTable, field, "TEXT", 100)
     valueEt += 1
-    #count += 1 
-    #if count == 3:
-    #    break
-
+    
     with UpdateCursor(geographicDataOrder + ".shp", (idField, field)) as geographicRows:
 
         for geographicRow in geographicRows:
@@ -53,4 +47,4 @@ for field in newFields:
                     
                     geographicRows.updateRow(geographicRow)
 
-                    break # isso melhora 50% do desempenho
+                    break
