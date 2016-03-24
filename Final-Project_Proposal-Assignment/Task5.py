@@ -36,7 +36,7 @@ for field in newFields:
 
                 if str(geographicRow[0]) == str(demographicRow[0]):
 
-                    # See -----> if demographicRow[0] == "NULL":
+                    # See ------> if demographicRow[0] == "NULL":
 
                         valueDemographicRow = "0"
                 else:
