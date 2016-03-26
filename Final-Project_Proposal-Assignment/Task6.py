@@ -1,3 +1,4 @@
+#--------------------------------CREATE A RACIAL RANDOW MAP--------------------------------
 import csv, operator
 
 from arcpy import env, AddField_management, CreateRandomPoints_management, Sort_management 
