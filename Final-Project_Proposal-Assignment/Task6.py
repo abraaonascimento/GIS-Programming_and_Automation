@@ -3,7 +3,7 @@ import csv, operator
 from arcpy import env, AddField_management, Sort_management, CreateRandomPoints_management
 from arcpy.da import UpdateCursor
 
-# Workspace 
+# Workspace
 env.workspace = "C:\\demographicMaps\\setores"
 
 # Demographic data
@@ -18,7 +18,7 @@ geographicData = "sampa"
 geographicDataOrder = "sampaOrder"
 geographicDataTable = "sampaOrder.dbf"
 
-# Create a order geographic data 
+# Create a order geographic data
 Sort_management("C:\\demographicMaps\\setores\\sampa.shp", geographicDataOrder, [["ID", "ASCENDING"]])
 
 # Id census tract
@@ -43,7 +43,7 @@ for field in newFields:
         for geographicRow in geographicRows:
 
             for demographicRow in demographicSorted:
-                    
+
                 if str(geographicRow[0]) == str(demographicRow[0]):
 
                     try:
@@ -51,11 +51,11 @@ for field in newFields:
                     except:
                         valueDemographicRow = 0
 
-                    geographicRow[1] = valueDemographicRow 
+                    geographicRow[1] = valueDemographicRow
                     geographicRows.updateRow(geographicRow)
                     break
 
     # Create a randow map
-    print "Creating the randow map: " + field
+    print "Creating the randow map of " + field + "people"
     CreateRandomPoints_management(env.workspace, field, geographicDataOrder + ".shp", "", field)
     print "The randow map " + field + " was created with sucess!"
