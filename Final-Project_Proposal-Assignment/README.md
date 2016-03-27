@@ -27,7 +27,7 @@ The geographic data of Sao Paulo city is a shapefile with 18.953 geometries of c
 each geometry of census tract has an average of 230 homes or 700 peoples.
 
 #####Census track of Sao Paulo city (link)
-![sample censu sampa](http://prnt.sc/akj2bo)
+![sample censu sampa](http://i.imgur.com/4GzK7SX.png)
 
 ### The demographic data
 The demographic data is a csv file with the information about the ethnicity, gender and age. 
