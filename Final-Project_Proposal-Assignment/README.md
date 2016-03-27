@@ -74,7 +74,6 @@ The number of pardas people: 40. The number of yellow people: 16. the number of 
 number indigenous people: 0. 
 
 Each ethnicity have your won shapefile that make a racial map, like below,
-http://i.imgur.com/6Lvwdyx.png
 
 #####Census Racial Map of just one geometry in Sao Paulo city
 ![census geometry sampa](http://i.imgur.com/6Lvwdyx.png)
