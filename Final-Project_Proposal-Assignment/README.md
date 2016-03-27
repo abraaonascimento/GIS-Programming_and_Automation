@@ -1,7 +1,7 @@
-# Make a census racial map
+# Make a census racial dot map
 
 
-The objective for this project is make code able to do a census racial map for any city in Brazil, 
+The objective for this project is make code able to do a census racial dot map for any city in Brazil, 
 in easier and faster way. Normally to do it process manually is hard because of the large amount 
 of information involved as long as the different changes that is necessary execute on geographic 
 and demographic data. 
@@ -39,26 +39,28 @@ V003 (black people), V004 (yellow people), V005 (parda people) and V006 (indigen
 
 ### Using the code
 
-import csv, operator
+``import csv, operator
 
-from arcpy import env, AddField_management, CreateRandomPoints_management , Sort_management
-from arcpy.da import UpdateCursor
+``from arcpy import env, AddField_management, CreateRandomPoints_management , Sort_management
+``from arcpy.da import UpdateCursor
 
-To make a census racial map is important import the standard functions of python: csv and operator to work with 
-demographic data and the ESRI functions: env, AddField_management, CreateRandomPoints_management , Sort_management to work with geographic data.
+To make a census racial dot map is necessary import the standard functions of python: **csv** and **operator** to work with 
+demographic data and the ESRI functions: **env, AddField_management, CreateRandomPoints_management , Sort_management** to work with geographic data.
 
-env.workspace = "C:\\demographicMaps\\setores". It's the line to set the folder with the geometries of census of city or states.
+``env.workspace = "C:\\demographicMaps\\setores". 
+It's the line to set the folder with the geometries of census of city or states.
 
-demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv"). It's the line for put the csv file with the information about the people.
+``demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv"). 
+It's the line for put the csv file with the information about the people.
 
-Now, basically what is necessary to do is put the name of geographic data (shapefile) and the name to new geographic data 
+Now, basically what is necessary to do is put the name of geographic data (shapefile) and the name to new order geographic data 
 file. Like below,
 
-geographicData = "sampa"
+``geographicData = "sampa"
 
-geographicDataOrder = "sampaOrder"
+``geographicDataOrder = "sampaOrder"
 
-Is just that, the rest of code is able to make a racial map. 
+Is just that, the rest of code is able to make a racial dot map. 
 
 ### It's important understand
 
@@ -72,12 +74,12 @@ One interesting thing for this example is the total number of people: 555. The n
 The number of parda people: 40. The number of yellow people: 16. the number of black people: 3 and the 
 number indigenous people: 0. 
 
-Each ethnicity have your won shapefile that make a racial map, like below,
+Each ethnicity have your won shapefile that make a racial dot map, like below,
 
-#####Census Racial Map of just one geometry in Sao Paulo city
+#####Census Racial Dot Map of just one geometry in Sao Paulo city
 ![census geometry sampa](http://i.imgur.com/6Lvwdyx.png)
  
-The same information is also nice to analysis when on one satellite image.
+The same information is also nice to analysis when it's on one satellite image.
 
-#####Census Racial Map of just one geometry in Sao Paulo city
+#####Census Racial Dot Map of just one geometry in Sao Paulo city
 ![census geometry sampa](http://i.imgur.com/n2Q6IYC.jpg)
