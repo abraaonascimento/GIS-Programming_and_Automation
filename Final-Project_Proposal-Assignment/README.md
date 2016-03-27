@@ -66,6 +66,8 @@ Is just that, the rest of code is able to make racial map.
 Each geometry of census tract is identified with one single code. The example below have the code: 
 355030845000034. All that is necessary to find the information about the people is just it because it's 
 the same code in table by demographic data.
+
+![census geometry sampa](http://i.imgur.com/w5ASJ7Z.png)
   
 One interesting thing for this example this the total number of people: 555. The number of white people: 496. 
 The number of pardas people: 40. The number of yellow people: 16. the number of black people: 3 and the 
