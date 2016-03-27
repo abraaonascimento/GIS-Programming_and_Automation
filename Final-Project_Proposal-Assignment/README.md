@@ -6,32 +6,32 @@ in easier and faster way. Normally to do it process manually is hard because of 
 of information involved as long as the different changes that is necessary execute on geographic 
 and demographic data. 
 
-With the first version of python code to make a census racial map basically what is necessary to 
-do is set the geographic data with geometries of census tract and the demographic data of city or 
+With it first version of code is possible make a census racial map. Basically what is necessary to 
+do is: set the geographic data with geometries of census tract and the demographic data of city or 
 states.
 
 ### Collecting the data
 
 The Brazilian Institute of Geography and Statistic (IBGE) is the institute responsible to 
-production the information about the people in brazil how for example the information the total of
-people in each city in Brazil. 
+production the information about the people in Brazil, how for example the information about the total of
+people in each city. 
 
-The data used for this example is of Sao Paulo city that can be access in the web sites below, 
+The data used for this example it is the Sao Paulo city and can be access in the web sites below, 
 
 - Geographic data: http://downloads.ibge.gov.br/downloads_estatisticas.htm
 - Demographic data: ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
 
 ### The geographic data
 
-The geographic data of Sao Paulo city is a shapefile with 18.953 geometries of census tract. Normally 
+The geographic data of Sao Paulo city it is a shapefile with 18.953 geometries of census tract. Normally 
 each geometry of census tract has an average of 230 homes or 700 peoples.
 
 #####Census track of Sao Paulo city
 ![sample censu sampa](http://i.imgur.com/4GzK7SX.png)
 
 ### The demographic data
-The demographic data is a csv file with the information about the ethnicity, gender and age. 
-For this example was used only information about ethnicity that are the variables V002 (white people), 
+The demographic data it is a csv file with the information about the ethnicity, gender and age. 
+For this example was used only information about ethnicity. It's the variables V002 (white people), 
 V003 (black people), V004 (yellow people), V005 (parda people) and V006 (indigenous people).
 
 #####Sample demographic data
@@ -44,22 +44,21 @@ import csv, operator
 from arcpy import env, AddField_management, CreateRandomPoints_management , Sort_management
 from arcpy.da import UpdateCursor
 
-To make a census racial map is important import the standard functions: csv and operator to work with 
-demographic data and the ESRI functions to work with geographic data.
+To make a census racial map is important import the standard functions of python: csv and operator to work with 
+demographic data and the ESRI functions: env, AddField_management, CreateRandomPoints_management , Sort_management to work with geographic data.
 
-env.workspace = "C:\\demographicMaps\\setores"
-It's the line to set the folder with the geometries of census of city or states.
+env.workspace = "C:\\demographicMaps\\setores". It's the line to set the folder with the geometries of census of city or states.
 
-demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")
-It's the line for put the csv file with the information about the people.
+demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv"). It's the line for put the csv file with the information about the people.
 
-Now basically what is necessary to do is put the name of geographic file and the name to new geographic 
+Now, basically what is necessary to do is put the name of geographic data (shapefile) and the name to new geographic data 
 file. Like below,
 
 geographicData = "sampa"
+
 geographicDataOrder = "sampaOrder"
 
-Is just that, the rest of code is able to make racial map. 
+Is just that, the rest of code is able to make a racial map. 
 
 ### It's important understand
 
