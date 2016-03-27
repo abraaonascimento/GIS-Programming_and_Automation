@@ -1,4 +1,4 @@
-# Final Project - Make a census racial map
+# Make a census racial map
 
 
 The objective for this project is make code able to do a census racial map for any city in Brazil, 
@@ -26,14 +26,14 @@ The data used for this example is of Sao Paulo city that can be access in the we
 The geographic data of Sao Paulo city is a shapefile with 18.953 geometries of census tract. Normally 
 each geometry of census tract has an average of 230 homes or 700 peoples.
 
-####Census track of Sao Paulo city (link)
+#####Census track of Sao Paulo city (link)
 
 ### The demographic data
 The demographic data is a csv file with the information about the ethnicity, gender and age. 
 For this example was used only information about ethnicity that are the variables V002 (white people), 
 V003 (black people), V004 (yellow people), V005 (parda people) and V006 (indigenous people).
 
-####Sample of demographic data (link)
+#####Sample of demographic data (link)
  
 
 ### Using the code
@@ -72,12 +72,12 @@ number indigenous people: 0.
 
 Each ethnicity have your won shapefile that make a racial map, like below,
 
-Census Racial Map of just one geometry in Sao Paulo city (link)
+#####Census Racial Map of just one geometry in Sao Paulo city (link)
  
-####The same information is also nice to analysis when on one satellite image.
+The same information is also nice to analysis when on one satellite image.
 
 
-####Census Racial Map of just one geometry in Sao Paulo city (link)
+#####Census Racial Map of just one geometry in Sao Paulo city (link)
  
 
  
