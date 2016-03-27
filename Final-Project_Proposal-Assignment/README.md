@@ -19,7 +19,7 @@ people in each city in Brazil.
 The data used for this example is of Sao Paulo city that can be access in the web sites below, 
 
 - Geographic data: http://downloads.ibge.gov.br/downloads_estatisticas.htm
-- Gemographic data: ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
+- Demographic data: ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
 
 ### The geographic data
 
