@@ -26,7 +26,7 @@ The data used for this example is of Sao Paulo city that can be access in the we
 The geographic data of Sao Paulo city is a shapefile with 18.953 geometries of census tract. Normally 
 each geometry of census tract has an average of 230 homes or 700 peoples.
 
-#####Census track of Sao Paulo city (link)
+#####Census track of Sao Paulo city
 ![sample censu sampa](http://i.imgur.com/4GzK7SX.png)
 
 ### The demographic data
@@ -34,8 +34,8 @@ The demographic data is a csv file with the information about the ethnicity, gen
 For this example was used only information about ethnicity that are the variables V002 (white people), 
 V003 (black people), V004 (yellow people), V005 (parda people) and V006 (indigenous people).
 
-#####Sample of demographic data (link)
- 
+#####Sample demographic data
+![sample demogrphic data sampa](http://i.imgur.com/WWWpSwx.png)
 
 ### Using the code
 
@@ -72,15 +72,12 @@ The number of pardas people: 40. The number of yellow people: 16. the number of 
 number indigenous people: 0. 
 
 Each ethnicity have your won shapefile that make a racial map, like below,
+http://i.imgur.com/6Lvwdyx.png
 
-#####Census Racial Map of just one geometry in Sao Paulo city (link)
+#####Census Racial Map of just one geometry in Sao Paulo city
+![census geometry sampa](http://i.imgur.com/6Lvwdyx.png)
  
 The same information is also nice to analysis when on one satellite image.
 
-
-#####Census Racial Map of just one geometry in Sao Paulo city (link)
- 
-
- 
-
-
+#####Census Racial Map of just one geometry in Sao Paulo city
+![census geometry sampa](http://i.imgur.com/n2Q6IYC.jpg)
