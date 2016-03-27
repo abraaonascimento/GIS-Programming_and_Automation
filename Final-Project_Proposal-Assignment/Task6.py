@@ -1,7 +1,7 @@
-#--------------------------------CREATE A RACIAL RANDOW MAP--------------------------------
+#--------------------------------MAKE A RACIAL RANDOW DOT MAP--------------------------------
 import csv, operator
 
-from arcpy import env, AddField_management, CreateRandomPoints_management, Sort_management 
+from arcpy import env, AddField_management, Sort_management, CreateRandomPoints_management
 from arcpy.da import UpdateCursor
 
 # Workspace
@@ -17,10 +17,10 @@ demographicSorted = sorted(demographicCsv, key=operator.itemgetter(0))
 geographicData = "sampa"
 
 geographicDataOrder = "sampaOrder"
-geographicDataTable = "sampaOrder.dbf"
+geographicDataTable = geographicDataOrder + ".dbf"
 
 # Create a order geographic data
-Sort_management("C:\\demographicMaps\\setores\\sampa.shp", geographicDataOrder, [["ID", "ASCENDING"]])
+Sort_management(env.workspace + "\\" + geographicData + ".shp", geographicDataOrder, [["ID", "ASCENDING"]])
 
 # Id census tract
 idField = "CD_GEOCODI"
