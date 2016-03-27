@@ -53,12 +53,9 @@ It's the line to set the folder with the geometries of census of city or states.
 ``demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")``
 It's the line for put the csv file with the information about the people.
 
-Now, basically what is necessary to do is put the name of geographic data (shapefile) and the name to new order geographic data 
-file. Like below,
+Now, basically what is necessary to do is put the name of geographic data (shapefile). Like below,
 
 ``geographicData = "sampa"``
-
-``geographicDataOrder = "sampaOrder"``
 
 Is just that, the rest of code is able to make a racial dot map. 
 
