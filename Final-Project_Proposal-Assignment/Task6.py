@@ -1,4 +1,4 @@
-#--------------------------------MAKE A RACIAL RANDOW DOT MAP-------------------------------
+#-------------------------------MAKE A RACIAL RANDOW DOT MAP-------------------------------
 import csv, operator
 
 from arcpy import env, AddField_management, CreateRandomPoints_management, Sort_management
