@@ -16,7 +16,7 @@ demographicSorted = sorted(demographicCsv, key=operator.itemgetter(0))
 # Geographic Data
 geographicData = "sampa"
 
-geographicDataOrder = "sampaOrder"
+geographicDataOrder = geographicData + "Order"
 geographicDataTable = geographicDataOrder + ".dbf"
 
 # Create a order geographic data
