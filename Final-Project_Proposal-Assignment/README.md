@@ -33,7 +33,7 @@ each geometry of census tract has an average of 230 homes or 700 inhabitants.
 ### The demographic data
 The demographic data it is a csv file with the information about the ethnicity, gender and age. 
 For this example was used only information about ethnicity. It's the variables V002 (white people), 
-V003 (black people), V004 (yellow people), V005 (brown people, or parda) and V006 (indigenous people).
+V003 (black people), V004 (yellow people), V005 (brown people, or _parda_) and V006 (indigenous people).
 
 #####Sample demographic data
 ![sample demogrphic data sampa](http://i.imgur.com/WWWpSwx.png)
@@ -69,7 +69,7 @@ need to serach for the same code from the census tract but regarding the demogra
 ![census geometry sampa](http://i.imgur.com/w5ASJ7Z.png)
   
 One interesting thing for this example is the total number of inhabitants: 555. The number of white people: 496. 
-The number of parda people: 40. The number of yellow people: 16. the number of black people: 3 and the 
+The number of _parda_ people: 40. The number of yellow people: 16. the number of black people: 3 and the 
 number indigenous people: 0. 
 
 Each ethnicity has it's won shapefile which creates a racial dot map. As seen in, 
