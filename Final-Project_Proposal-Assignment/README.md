@@ -56,7 +56,7 @@ Now, basically what is necessary to do is put the name of geographic data (shape
 
 ``geographicData = "sampa"``
 
-Is just that, the rest of code is able to make a racial dot map. 
+Is just that, the rest of code in **Task6.py** is able to make a racial dot map. 
 
 ### It's important understand
 
