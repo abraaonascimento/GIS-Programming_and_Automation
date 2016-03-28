@@ -18,13 +18,14 @@ The data used for this example is the data of Sao Paulo city and it can be acces
 
 - Geographic data: 
   - http://downloads.ibge.gov.br/downloads_estatisticas.htm
+
 - Demographic data: 
   - ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
 
 ### The geographic data
 
 The geographic data of Sao Paulo city it is a shapefile with 18.953 geometries of census tract. Normally 
-each geometry of census tract has an average of 230 homes or 700 peoples.
+each geometry of census tract has an average of 230 homes or 700 inhabitants.
 
 #####Census track of Sao Paulo city
 ![sample censu sampa](http://i.imgur.com/4GzK7SX.png)
@@ -32,7 +33,7 @@ each geometry of census tract has an average of 230 homes or 700 peoples.
 ### The demographic data
 The demographic data it is a csv file with the information about the ethnicity, gender and age. 
 For this example was used only information about ethnicity. It's the variables V002 (white people), 
-V003 (black people), V004 (yellow people), V005 (parda people) and V006 (indigenous people).
+V003 (black people), V004 (yellow people), V005 (brown people, or parda) and V006 (indigenous people).
 
 #####Sample demographic data
 ![sample demogrphic data sampa](http://i.imgur.com/WWWpSwx.png)
@@ -44,22 +45,22 @@ V003 (black people), V004 (yellow people), V005 (parda people) and V006 (indigen
 ``from arcpy import env, AddField_management, CreateRandomPoints_management , Sort_management``
 ``from arcpy.da import UpdateCursor``
 
-To make a census racial dot map is necessary import the standard functions of python: **csv** and **operator** to work with 
+To make a census racial dot map it is necessary to import the standard functions of python: **csv** and **operator** to work with 
 demographic data and the ESRI functions: **env, AddField_management, CreateRandomPoints_management , Sort_management** to work with geographic data.
 
 ``env.workspace = "C:\\demographicMaps\\setores"``
-It's the line to set the folder with the geometries of census of city or state.
+Is the line to set the folder with the geometries of census from a city or state.
 
 ``demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")``
-It's the line for put the csv file with the information about the people.
+Is the line to insert the csv file with the information about the people.
 
-Now, basically what is necessary to do is put the name of geographic data (shapefile). As below,
+Now, basically what you need to do is to insert the name of geographic data (shapefile). As below,
 
 ``geographicData = "sampa"``
 
-Is just that, the rest of code in **Task6.py** is able to make a racial dot map. 
+And that's it, the rest of the code in **Task6.py** is able to make a racial dot map regarding the embed information.
 
-### It's important understand
+### It's important to understand
 
 Each geometry of census tract is identified with one single code. The example below have the code: 
 355030845000034. All that is necessary to find the information about the people is just it code, because it's 
