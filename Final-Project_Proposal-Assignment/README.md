@@ -15,7 +15,7 @@ The Brazilian Institute of Geography and Statistic (IBGE) is the institute respo
 production the information about the people in Brazil, how for example the information about the total of
 people in each city. 
 
-The data used for this example is the data of Sao Paulo city and can be access in the web sites below, 
+The data used for this example is the data of Sao Paulo city and it can be access in the web sites below, 
 
 - Geographic data: http://downloads.ibge.gov.br/downloads_estatisticas.htm
 - Demographic data: ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
@@ -52,7 +52,7 @@ It's the line to set the folder with the geometries of census of city or states.
 ``demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")``
 It's the line for put the csv file with the information about the people.
 
-Now, basically what is necessary to do is put the name of geographic data (shapefile). Like below,
+Now, basically what is necessary to do is put the name of geographic data (shapefile). As below,
 
 ``geographicData = "sampa"``
 
@@ -70,7 +70,7 @@ One interesting thing for this example is the total number of people: 555. The n
 The number of parda people: 40. The number of yellow people: 16. the number of black people: 3 and the 
 number indigenous people: 0. 
 
-Each ethnicity have your won shapefile that create a racial dot map, like below,
+Each ethnicity have your won shapefile that create a racial dot map. As seen in, 
 
 #####Census racial dot map of just one geometry in Sao Paulo city
 ![census geometry sampa](http://i.imgur.com/6Lvwdyx.png)
