@@ -1,24 +1,25 @@
-# Make a census racial dot map
+# Making a census racial dot map
 
 
-The objective for this project is make the code able to do a census racial dot map for any city in Brazil, 
-in easier and faster way. Normally to do it process manually is hard because of the large amount 
-of information involved as long as the different changes that is necessary execute on geographic 
-and demographic data. 
+The main goal for this project is make the code able to perform a census racial dot map for any city in Brazil, 
+in easier and faster way. Because of the large amount of information involved in this process, 
+and the both diverse geographic and demographic data, it is not recommended to perform it manually.
 
-With this version of code is possible create a census racial dot map for any city in Brazil. Basically what is necessary to 
-do is: set the geographic data with geometries of census tract and the demographic data with variables for census tract.
+With this version of code, it is possible to create a census racial dot map for any city in Brazil. Basically what you need to do
+is to set the geographic data with geometries of census tract and the demographic data with variables for census tract.
 
 ### Collecting the data
 
 The Brazilian Institute of Geography and Statistic (IBGE) is the institute responsible to 
-production the information about the people in Brazil, how for example the information about the total of
-people in each city. 
+collect and assemble the information about the people in Brazil. For example, the total of
+population on a certain area or city. 
 
 The data used for this example is the data of Sao Paulo city and it can be accessed in the web sites below, 
 
-- Geographic data: http://downloads.ibge.gov.br/downloads_estatisticas.htm
-- Demographic data: ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
+- Geographic data: 
+  - http://downloads.ibge.gov.br/downloads_estatisticas.htm
+- Demographic data: 
+  - ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
 
 ### The geographic data
 
