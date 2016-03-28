@@ -15,7 +15,7 @@ The Brazilian Institute of Geography and Statistic (IBGE) is the institute respo
 production the information about the people in Brazil, how for example the information about the total of
 people in each city. 
 
-The data used for this example is the data of Sao Paulo city and it can be access in the web sites below, 
+The data used for this example is the data of Sao Paulo city and it can be accessed in the web sites below, 
 
 - Geographic data: http://downloads.ibge.gov.br/downloads_estatisticas.htm
 - Demographic data: ftp://geoftp.ibge.gov.br/malhas_digitais/censo_2010/
