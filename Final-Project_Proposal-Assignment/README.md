@@ -47,7 +47,7 @@ To make a census racial dot map is necessary import the standard functions of py
 demographic data and the ESRI functions: **env, AddField_management, CreateRandomPoints_management , Sort_management** to work with geographic data.
 
 ``env.workspace = "C:\\demographicMaps\\setores"``
-It's the line to set the folder with the geometries of census of city or states.
+It's the line to set the folder with the geometries of census of city or state.
 
 ``demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")``
 It's the line for put the csv file with the information about the people.
