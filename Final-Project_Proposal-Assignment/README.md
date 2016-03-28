@@ -72,10 +72,10 @@ number indigenous people: 0.
 
 Each ethnicity have your won shapefile that create a racial dot map, like below,
 
-#####Census Racial Dot Map of just one geometry in Sao Paulo city
+#####Census racial dot map of just one geometry in Sao Paulo city
 ![census geometry sampa](http://i.imgur.com/6Lvwdyx.png)
  
 The same information is also nice to analysis when it's on one satellite image.
 
-#####Census Racial Dot Map of just one geometry in Sao Paulo city
+#####Census racial dot map of just one geometry in Sao Paulo city
 ![census geometry sampa](http://i.imgur.com/n2Q6IYC.jpg)
