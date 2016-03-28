@@ -1,14 +1,13 @@
 # Make a census racial dot map
 
 
-The objective for this project is make code able to do a census racial dot map for any city in Brazil, 
+The objective for this project is make the code able to do a census racial dot map for any city in Brazil, 
 in easier and faster way. Normally to do it process manually is hard because of the large amount 
 of information involved as long as the different changes that is necessary execute on geographic 
 and demographic data. 
 
-With it first version of code is possible make a census racial map. Basically what is necessary to 
-do is: set the geographic data with geometries of census tract and the demographic data of city or 
-states.
+With this version of code is possible create a census racial dot map for any city in Brazil. Basically what is necessary to 
+do is: set the geographic data with geometries of census tract and the demographic data with variables for census tract.
 
 ### Collecting the data
 
