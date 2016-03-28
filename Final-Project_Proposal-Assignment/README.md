@@ -70,7 +70,7 @@ One interesting thing for this example is the total number of people: 555. The n
 The number of parda people: 40. The number of yellow people: 16. the number of black people: 3 and the 
 number indigenous people: 0. 
 
-Each ethnicity have your won shapefile that make a racial dot map, like below,
+Each ethnicity have your won shapefile that create a racial dot map, like below,
 
 #####Census Racial Dot Map of just one geometry in Sao Paulo city
 ![census geometry sampa](http://i.imgur.com/6Lvwdyx.png)
