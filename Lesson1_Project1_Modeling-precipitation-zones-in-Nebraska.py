@@ -40,7 +40,7 @@ def precipitation_map_Nebraska(shape_point, shape_polygon):
 def main():
 
     # Create shapefile for map precipitation in Nebraska
-    precipitation_Nebraska(shape_point, shape_polygon)
+    precipitation_map_Nebraska(shape_point, shape_polygon)
 
 if __name__ == "__main__":
     main()
