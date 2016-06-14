@@ -24,7 +24,7 @@ def ponto_unico(poligono):
             # Retorna o ponto gerado
             return ponto_aleatorio
 
-def multiplos_pontos(codigos_e_geometrias, cogidos_e_populacao):
+def multiplos_pontos(codigos_e_geometrias, codigos_e_populacao):
     """
     A funcao cria_pontos_aleatorios cria pontos aleatorios dentro de um poligono
     
@@ -40,7 +40,7 @@ def multiplos_pontos(codigos_e_geometrias, cogidos_e_populacao):
     pontos_aleatorios = []
 
     # Para setor censitario
-    for codigo in cogidos_e_populacao:
+    for codigo in codigos_e_populacao:
     
         # Cria uma lista com a quantidade de habitantes no setor
         try:
