@@ -44,7 +44,7 @@ def multiplos_pontos(codigos_e_geometrias, codigos_e_populacao):
     
         # Cria uma lista com a quantidade de habitantes no setor
         try:
-            populacao = range(int(cogidos_e_populacao[codigo]))
+            populacao = range(int(codigos_e_populacao[codigo]))
         except:
             populacao = range(0)
     
