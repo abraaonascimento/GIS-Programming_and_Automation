@@ -20,17 +20,15 @@ def e_geometria(nome_shapefile):
     # Recebe todos os atributos do shapefile
     atributos = arquivo_shp.records()
     
-    # Cria um conjunto para guardar o codigo e a geometria de um setor censitario
-    codigo_e_geometria = {}
-    
     # Cria um conjunto para guardar todos os codigos e todas as geometrias dos setores censitarios
     todos_codigos_e_geometrias = {}
 
     # Para cada geometria do shapefile
     for indice, geometria in enumerate(geometrias): 
         
+        # Cria um conjunto para guardar o codigo e a geometria de um setor censitario e
         # Recebe o codigo e os pares de coordenadas da geometria do setor
-        codigo_e_geometria[str(atributos[indice][1])] = geometria.points
+        codigo_e_geometria = {str(atributos[indice][1]): geometria.points}
         
         # Guarda o codigo e os pares de coordenadas da geometria do setor
         todos_codigos_e_geometrias.update(codigo_e_geometria)
@@ -50,23 +48,21 @@ def e_populacao(codigoSetor, populacao):
     da populacao nos setores censitários
     """
     
-    # Cria um conjunto para guardar o codigo e o registro de populacao no setor censitarios
-    registro_populacao = {}
-    
     # Cria um conjunto para guardar todos os codigos e todos os registros de populacao nos setores censitarios
     registros_populacao = {}
     
     # Pula a primeira linha (o cabeçalho) da lista de setores censitarios
-    codigos = codigoSetor[1:] 
+    codigoSetor = codigoSetor[1:] 
     
     # Pula a primeira linha (o cabeçalho) da lista de registros de populacao nos setores censitarios
     populacao = populacao[1:]
     
     # Para cada codigo na lista de setores censitarios
-    for indice, codigo in enumerate(codigos):
+    for indice, codigo in enumerate(codigoSetor):
         
-        # Recebe o codigo e o registro de populacao no setor
-        registro_populacao[codigo] = populacao[indice]
+        # Cria um conjunto para guardar o codigo e o registro de populacao no setor censitarios
+        # Recebe o codigo e o registro de populacao no setor    
+        registro_populacao = {codigo: populacao[indice]}
         
         # Guarda o codigo e o registro de populacao no setor
         registros_populacao.update(registro_populacao)
