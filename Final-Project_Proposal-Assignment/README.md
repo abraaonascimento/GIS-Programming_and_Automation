@@ -38,28 +38,6 @@ V003 (black people), V004 (yellow people), V005 (brown people, or _parda_) and V
 #####Sample demographic data
 ![sample demogrphic data sampa](http://i.imgur.com/WWWpSwx.png)
 
-### Using the code
-
-``import csv, operator``
-
-``from arcpy import env, AddField_management, CreateRandomPoints_management , Sort_management``
-``from arcpy.da import UpdateCursor``
-
-To make a census racial dot map it is necessary to import the standard functions of python: **csv** and **operator** to work with 
-demographic data and the ESRI functions: **env, AddField_management, CreateRandomPoints_management , Sort_management** to work with geographic data.
-
-``env.workspace = "C:\\demographicMaps\\setores"``
-Is the line to set the folder with the geometries of census from a city or state.
-
-``demographicData = open("C:\\demographicMaps\\tabelas\\Pessoa03_SP1.csv")``
-Is the line to insert the csv file with the information about the people.
-
-Now, basically what you need to do is to insert the name of geographic data (shapefile). As below,
-
-``geographicData = "sampa"``
-
-And that's it, the rest of the code in **Task6.py** is able to make a racial dot map regarding the embed information.
-
 ### It's important to understand
 
 Each geometry of census tract is identified with one single code. The example below shows the code: 
